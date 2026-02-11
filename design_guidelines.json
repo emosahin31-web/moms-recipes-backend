@@ -1,0 +1,143 @@
+{
+  "project_metadata": {
+    "app_name": "Mom's Kitchen Assistant",
+    "app_type": "recipe_management_web_app",
+    "target_audience": "Non-technical home cooks (specifically 'Mom')",
+    "emotional_tone": "Warm, Inviting, Clean, Organized, Nostalgic but Modern"
+  },
+  "design_system": {
+    "typography": {
+      "font_family": {
+        "heading": "Playfair Display, serif",
+        "body": "Lato, sans-serif"
+      },
+      "imports": [
+        "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;600;700&display=swap"
+      ],
+      "usage": {
+        "h1": "text-4xl md:text-5xl font-heading font-bold tracking-tight text-primary-900",
+        "h2": "text-3xl font-heading font-semibold text-primary-800",
+        "h3": "text-2xl font-heading font-medium text-primary-800",
+        "body": "text-base md:text-lg font-body text-stone-700 leading-relaxed",
+        "label": "text-sm font-body font-bold uppercase tracking-wider text-stone-500"
+      }
+    },
+    "colors": {
+      "palette": {
+        "background": "#FAFAF8",
+        "foreground": "#3E3E3A",
+        "primary": "#5D7B6F",
+        "primary_foreground": "#FFFFFF",
+        "secondary": "#D4A373",
+        "secondary_foreground": "#FFFFFF",
+        "accent": "#E9C46A",
+        "muted": "#F0F0E8",
+        "muted_foreground": "#787870",
+        "card": "#FFFFFF",
+        "border": "#E6E6E0"
+      },
+      "tailwind_config_extension": {
+        "colors": {
+          "cream": "#FAFAF8",
+          "sage": {
+            "50": "#F4F7F5",
+            "100": "#E3EBE6",
+            "500": "#5D7B6F",
+            "900": "#2C3A34"
+          },
+          "terracotta": "#D4A373",
+          "stone": {
+            "800": "#3E3E3A"
+          }
+        }
+      }
+    },
+    "spacing": {
+      "container_padding": "p-6 md:p-12 lg:p-16",
+      "section_gap": "gap-8 md:gap-12",
+      "element_gap": "gap-4"
+    },
+    "radius": {
+      "default": "rounded-xl",
+      "card": "rounded-2xl",
+      "button": "rounded-full"
+    },
+    "shadows": {
+      "soft": "shadow-[0_4px_20px_-2px_rgba(0,0,0,0.05)]",
+      "hover": "shadow-[0_10px_30px_-4px_rgba(93,123,111,0.15)]"
+    }
+  },
+  "layout_strategies": {
+    "main_container": "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8",
+    "bento_grid": "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[minmax(200px,auto)]",
+    "rich_text_editor": "min-h-[500px] bg-white rounded-xl shadow-sm border border-stone-200 p-8",
+    "sidebar": "w-full md:w-80 lg:w-96 bg-white border-l border-stone-100 h-full fixed right-0 top-0 z-40 shadow-xl transform transition-transform"
+  },
+  "component_guidelines": {
+    "buttons": {
+      "primary": "bg-primary text-white hover:bg-primary/90 px-8 py-3 rounded-full font-body font-medium transition-all shadow-sm hover:shadow-md active:scale-95",
+      "secondary": "bg-white text-primary border-2 border-primary/20 hover:border-primary hover:bg-primary/5 px-8 py-3 rounded-full font-body font-medium transition-all",
+      "ghost": "text-stone-600 hover:text-primary hover:bg-stone-100 px-4 py-2 rounded-lg transition-colors"
+    },
+    "cards": {
+      "recipe": "group relative overflow-hidden bg-white rounded-2xl shadow-soft hover:shadow-hover transition-all duration-300 border border-stone-100 hover:border-primary/20 cursor-pointer",
+      "feature": "bg-sage-50/50 p-8 rounded-2xl border border-sage-100"
+    },
+    "inputs": {
+      "default": "bg-white border-stone-200 focus:border-primary focus:ring-2 focus:ring-primary/20 rounded-lg py-3 px-4 transition-all"
+    }
+  },
+  "features_and_libraries": {
+    "rich_text_editor": {
+      "library": "react-quill",
+      "install_command": "npm install react-quill",
+      "theme": "snow",
+      "customization_notes": "Hide complex code block/formula buttons. Style the toolbar to match the Sage/Cream theme. Add ample padding inside the editor area to simulate a paper document."
+    },
+    "icons": {
+      "library": "lucide-react",
+      "style": "Stroke width 1.5px for elegance",
+      "install_command": "npm install lucide-react"
+    },
+    "toast": {
+      "library": "sonner",
+      "notes": "Use for save confirmations and chat responses."
+    }
+  },
+  "image_assets": {
+    "hero_background": {
+      "url": "https://images.unsplash.com/photo-1760067537565-1d4cbb8da0c3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzV8MHwxfHNlYXJjaHw0fHxtb2Rlcm4lMjBicmlnaHQlMjBraXRjaGVuJTIwaW50ZXJpb3IlMjB3YXJtJTIwYWVzdGhldGljc3xlbnwwfHx8fDE3NzA4MzE3NTJ8MA&ixlib=rb-4.1.0&q=85",
+      "alt": "Modern bright kitchen interior",
+      "usage": "Hero section background with overlay"
+    },
+    "decorative_fresh": {
+      "url": "https://images.unsplash.com/photo-1768405741410-71317eceb565?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NjV8MHwxfHNlYXJjaHwxfHxmcmVzaCUyMHZlZ2V0YWJsZXMlMjB3b29kZW4lMjB0YWJsZSUyMGNvb2tpbmclMjBpbmdyZWRpZW50c3xlbnwwfHx8fDE3NzA4MzE3NTJ8MA&ixlib=rb-4.1.0&q=85",
+      "alt": "Fresh zucchini in garden",
+      "usage": "Decorative element for 'Fresh Recipes' section"
+    },
+    "decorative_texture": {
+      "url": "https://images.unsplash.com/photo-1769181463790-0c5a2a8fea69?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NjV8MHwxfHNlYXJjaHwyfHxmcmVzaCUyMHZlZ2V0YWJsZXMlMjB3b29kZW4lMjB0YWJsZSUyMGNvb2tpbmclMjBpbmdyZWRpZW50c3xlbnwwfHx8fDE3NzA4MzE3NTJ8MA&ixlib=rb-4.1.0&q=85",
+      "alt": "Colorful peppers in wooden crate",
+      "usage": "Texture background or card image"
+    }
+  },
+  "universal_guidelines": [
+    "DO NOT use gradients for backgrounds; use solid warm cream colors or subtle textures.",
+    "Ensure all text has high contrast (WCAG AA) against the cream background.",
+    "Use 'Playfair Display' for ALL headings (h1-h3).",
+    "Use 'Lato' for body text and UI elements.",
+    "Buttons should be pill-shaped (rounded-full) to feel friendly.",
+    "Inputs and cards should have soft rounded corners (rounded-lg or rounded-xl).",
+    "The Rich Text Editor must feel like a clean sheet of paper - remove the default heavy border of Quill and use a shadow instead."
+  ],
+  "instructions_to_main_agent": [
+    "1. UPDATE `tailwind.config.js` to include the custom colors (sage, cream, terracotta) and fonts.",
+    "2. INSTALL `react-quill` for the recipe editor.",
+    "3. CREATE a `RecipeEditor` component using React-Quill.",
+    "4. CREATE a `LanguageSwitcher` component (Floating or Top-Right).",
+    "5. CREATE a `ChatGPTAssistant` component (likely a sidebar or modal).",
+    "6. CREATE a `YouTubeList` component for storing video links.",
+    "7. IMPLEMENT LocalStorage or Mock Backend for recipe persistence (key: 'moms-recipes').",
+    "8. USE the provided image URLs for visual polish."
+  ]
+}
