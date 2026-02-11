@@ -45,25 +45,3 @@
     @apply font-heading;
   }
 }
-
-.quill {
-  @apply bg-white rounded-xl shadow-sm border border-stone-200;
-}
-
-.ql-toolbar {
-  @apply border-b border-stone-200 rounded-t-xl bg-sage-50/30;
-}
-
-.ql-container {
-  @apply rounded-b-xl;
-  min-height: 300px;
-}
-
-.ql-editor {
-  @apply p-8 text-base leading-relaxed;
-  min-height: 300px;
-}
-
-.ql-editor.ql-blank::before {
-  @apply text-stone-400 italic;
-}
