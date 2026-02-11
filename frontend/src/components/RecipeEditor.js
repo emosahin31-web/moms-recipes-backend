@@ -1,30 +1,20 @@
 import React, { useState } from 'react';
-import ReactQuill from 'react-quill-new';
-import 'react-quill-new/dist/quill.snow.css';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
-import { Save } from 'lucide-react';
+import { Textarea } from './ui/textarea';
+import { Save, Bold, Italic, List, ListOrdered } from 'lucide-react';
 import { toast } from 'sonner';
 
 const RecipeEditor = ({ onSave, translations }) => {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
 
-  const modules = {
-    toolbar: [
-      [{ header: [1, 2, 3, false] }],
-      ['bold', 'italic', 'underline'],
-      [{ list: 'ordered' }, { list: 'bullet' }],
-      ['clean']
-    ]
-  };
-
   const handleSave = () => {
     if (!title.trim()) {
       toast.error(translations.titleRequired);
       return;
     }
-    if (!content.trim() || content === '<p><br></p>') {
+    if (!content.trim()) {
       toast.error(translations.contentRequired);
       return;
     }
@@ -56,14 +46,19 @@ const RecipeEditor = ({ onSave, translations }) => {
           <label className="block text-sm font-body font-bold uppercase tracking-wider text-stone-500 mb-2">
             {translations.recipeContent}
           </label>
-          <ReactQuill
+          <Textarea
             data-testid="recipe-content-editor"
-            theme="snow"
             value={content}
-            onChange={setContent}
-            modules={modules}
+            onChange={(e) => setContent(e.target.value)}
             placeholder={translations.recipeContentPlaceholder}
+            className="w-full min-h-[400px] bg-white border-stone-200 focus:border-sage-500 focus:ring-2 focus:ring-sage-500/20 rounded-xl p-6 transition-all text-base leading-relaxed font-body resize-y"
+            rows={15}
           />
+          <p className="text-xs text-stone-400 mt-2 italic">
+            {translations.language === 'tr' 
+              ? 'Tarifınızı buraya yazın - malzemeler, talimatlar ve notlar' 
+              : 'Write your recipe here - ingredients, instructions, and notes'}
+          </p>
         </div>
         <Button
           data-testid="save-recipe-btn"
