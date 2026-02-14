@@ -1,19 +1,15 @@
 from fastapi import FastAPI, APIRouter, HTTPException
-from dotenv import load_dotenv
 from starlette.middleware.cors import CORSMiddleware
 from motor.motor_asyncio import AsyncIOMotorClient
 import os
 import logging
-from pathlib import Path
 from pydantic import BaseModel, Field, ConfigDict
 from typing import List, Optional
 import uuid
 from datetime import datetime, timezone
 
-ROOT_DIR = Path(__file__).parent
-load_dotenv(ROOT_DIR / ".env")
-
 mongo_url = os.environ.get("MONGO_URI")
+print("MONGO_URI:", mongo_url)
 
 if not mongo_url:
     raise Exception("MONGO_URI not found in environment variables")
@@ -23,6 +19,11 @@ db_name = os.environ.get("DB_NAME", "momsrecipes")
 db = client[db_name]
 
 app = FastAPI()
+
+@app.get("/test-mongo")
+async def test_mongo():
+    return {"mongo": str(os.environ.get("MONGO_URI"))}
+
 api_router = APIRouter(prefix="/api")
 
 class Recipe(BaseModel):
