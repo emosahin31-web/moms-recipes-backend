@@ -19,6 +19,14 @@ db_name = os.environ.get("DB_NAME", "momsrecipes")
 db = client[db_name]
 
 app = FastAPI()
+@app.get("/env-test")
+async def env_test():
+    return {
+        "MONGO_URI": os.environ.get("MONGO_URI"),
+        "DB_NAME": os.environ.get("DB_NAME")
+    }
+
+
 
 @app.get("/test-mongo")
 async def test_mongo():
