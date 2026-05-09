@@ -10,8 +10,7 @@ import YouTubeLinks from './components/YouTubeLinks';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './components/ui/tabs';
 import { UtensilsCrossed } from 'lucide-react';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
+const API = 'https://moms-recipes-backend.onrender.com/api';
 
 const translations = {
   en: {

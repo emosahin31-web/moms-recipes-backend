@@ -35,7 +35,7 @@ const RecipeList = ({ recipes, onDelete, translations }) => {
               <Clock className="w-3 h-3" />
               {format(new Date(recipe.created_at), 'MMM dd, yyyy')}
             </div>
-            <div className="text-base text-stone-700 leading-relaxed mb-4 flex-grow line-clamp-4">
+            <div className="text-base text-stone-700 leading-relaxed mb-4 flex-grow">
               {stripHtml(recipe.content)}
             </div>
             <Button
